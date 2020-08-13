@@ -7,13 +7,10 @@ const breakfastBurrito = {name: "Breakfast Burrito", price: 16, category:"Breakf
 /* Task 1a: write a function to return more menu items with the same format as the items above. */
 
 function createMenuItem(name, cost, category){
-  let nameInput = name;
-  let costInput = cost;
-  let categoryInput = category;
   const menuItem = {
-    name: nameInput,
-    price: costInput,
-    category: categoryInput,
+    name: name,
+    price: cost,
+    category: category,
   }
   return menuItem;
 }
@@ -101,8 +98,8 @@ and should return a string in the format `name} gave the restaurant a {rating}, 
 
 For example, if getLastReview is invoked passing the reviews array it will return `Reyna gave the restaurant a 3.5 star review and their feedback was: "this place is chill with really cool people, great for getting work done on weekdays"`.
 */
-function getLastReview(str) {
-    return str[str.length - 1];
+function getLastReview(arr) {
+    return arr[arr.length - 1];
   } 
 console.log(getLastReview(reviews));
 
@@ -120,9 +117,12 @@ console.log(getLastReview(reviews));
     {name:"Lauren", rating: 4, feedback: "Absolutely love that they have karaoke Fridays! Food and drink selection is okay."}]
 */
 
- function getReviewByRating(/* code here */) {
-    /* code here */
+ function getReviewByRating(arr, num) {
+   
   }
+
+  console.log(getReviewByRating(reviews, 4));
+  
 
   
 /** STRETCH 2: Write a function called 'getLongestReview' that returns an array containing all reviews longer than 15 words. 
@@ -161,7 +161,16 @@ The returned object should have the following characteristics:
 */
 
 
-function carMaker(/* code here */) {
-    /* code here */
-    
+function carMaker(num) {
+    object = {
+      odometer: num,
+      drive: function(distance){
+        this.odometer = num + distance;
+        return this;
+      },
+    }
+    return object;
 }
+
+console.log(carMaker(12345))
+console.log(carMaker(12345).drive(1234));
